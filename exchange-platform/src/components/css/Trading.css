@@ -1,0 +1,111 @@
+/* CSS File */
+.trading {
+  background-color: #202020;
+  display: flex;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  border-radius: 16px;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.trading div {
+  border: 1px solid #141212;
+}
+
+.trading .first {
+  
+  padding-bottom: 40px;
+  width: 60%;
+  height: 561px;
+  background-color: #20252b;
+  border-radius: 8px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Add this to position the time-intervals div */
+}
+
+.time-intervals {
+  position: absolute; /* Position the div absolutely within its parent */
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  display: flex; /* Align the buttons horizontally */
+  gap: 10px; /* Add some gap between the buttons */
+  padding: 10px; /* Add some padding to the div */
+  background-color: #20252b; /* Match the background color with the parent div */
+  border: none; /* Remove the border */
+}
+
+.time-intervals p {
+  color: #ffffff; /* Change the color as needed */
+  margin-right: 10px; /* Add some margin to the right */
+}
+
+.time-intervals button {
+  padding: 5px 10px; /* Add some padding to the buttons */
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50; /* Change the color as needed */
+  color: white;
+  cursor: pointer;
+}
+
+.time-intervals button:hover {
+  background-color: #45a049; /* Change the color on hover */
+}
+
+.fx-indicators {
+  position: absolute; /* Position the div absolutely within its parent */
+  top: 50px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.fx-indicators div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Add some gap between the p elements */
+}
+
+.fx-indicators p {
+  color: #FFFFFF; /* Change the color as needed */
+  margin-right: 10px; /* Add some margin to the right */
+}
+
+.fx-indicators p span {
+  color: #4CAF50; /* Change the color of the data values to green */
+}
+
+
+
+#chart-container {
+  margin-top: 180px;
+}
+
+#volume-chart-container {
+  margin-bottom: 60px;
+}
+
+.trading .second {
+  width: 20%;
+  height: 561px;
+  background-color: #20252b;
+  border-radius: 8px;
+}
+
+.trading .third {
+  width: 20%;
+  height: 616px;
+  background-color: #20252b;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+
+#chart-container {
+  align-items: center;
+}

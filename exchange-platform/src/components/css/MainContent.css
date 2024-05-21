@@ -1,0 +1,75 @@
+.top__info {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  padding: 40px;
+   padding-top: 120px; /* Adjust this value as needed */
+  margin-left: 5px; /* Add left margin */
+  margin-right: 5px; /* Add right margin */
+  background-color: #20252B;
+  width: calc(100% - 10px); /* Subtract margins from width */
+  height: 80px;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: hidden;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+ 
+}
+
+.coin__drop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: #050505;
+  color: #ffffff;
+  gap: 16px;
+}
+
+/* .coin__drop img {
+  margin-right: 10px;
+}
+
+.coin__drop span {
+  margin-right: 10px;
+} */
+
+.coin__drop i {
+  color: #ffffff;
+}
+
+.frame {
+  width: 827px;
+  height: 48px;
+  gap: 48px;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  
+  
+}
+
+p {
+  font-size: 0.8em; /* Make the text smaller */
+  color: rgb(253, 253, 253);
+}
+
+p .green {
+  color: rgb(10, 240, 10); /* Make certain text green */
+}
+
+p.white {
+  font-size: 0.8em; /* Make the text smaller */
+  color: rgb(253, 253, 253);
+
+}
+
+
+
+.history-icon {
+  margin-right: 5px;
+}
+
+
+
