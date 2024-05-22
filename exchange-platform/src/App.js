@@ -9,16 +9,25 @@ import OrderSection from "./components/OrderSection";
 import Footer from "./components/Footer";
 import "./App.css";
 import Trading from "./components/Trading";
+import { GlobalFonts } from "./components/fonts";
 
 function App() {
   return (
     <Router>
-      <div class="flex flex-col min-h-screen">
+      <GlobalFonts />
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <div class="flex-grow">
+        <div className="flex-grow">
           <Routes>
-            <Route path="/" element={<MainContent />} />
-            <Route path="/" element={<OrderSection />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <MainContent />
+                  <OrderSection />
+                </>
+              }
+            />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/trading" element={<Trading />} />
             <Route path="/wallet" element={<Wallet />} />

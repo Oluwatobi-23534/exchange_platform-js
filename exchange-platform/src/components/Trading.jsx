@@ -6,8 +6,22 @@ import "./css/Trading.css";
 const Trading = () => {
   const [data, setData] = useState([]);
   const [timeframe, setTimeframe] = useState("1d"); // default timeframe
+  const [orders, setOrders] = useState([]); // Add this line
   const chartRef = useRef(null);
   const volumeChartRef = useRef(null);
+  const [priceChangeData, setPriceChangeData] = useState([
+    { price1: 36641.2, price2: 36641.2 },
+    // Add more data as needed
+  ]);
+  const [dataTableData, setDataTableData] = useState([
+    { price1: 36920.12, price2: 0.758965, total: 28020.98 },
+    { price1: 36920.12, price2: 0.758965, total: 28020.98 },
+    { price1: 36920.12, price2: 0.758965, total: 28020.98 },
+    { price1: 36920.12, price2: 0.758965, total: 28020.98 },
+    { price1: 36920.12, price2: 0.758965, total: 28020.98 },
+    { price1: 36920.12, price2: 0.758965, total: 28020.98 },
+   
+  ]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,13 +38,24 @@ const Trading = () => {
           volume: parseFloat(item[5]), // Add volume data
         }));
         setData(data);
+
+        // For now, let's use static data
+        const orders = [
+          { price: 36920.12, amount: 0.758965, total: 28020.98 },
+          { price: 36920.12, amount: 0.758965, total: 28020.98 },
+          { price: 36920.12, amount: 0.758965, total: 28020.98 },
+          { price: 36920.12, amount: 0.758965, total: 28020.98 },
+          { price: 36920.12, amount: 0.758965, total: 28020.98 },
+          // Add more orders as needed
+        ];
+        setOrders(orders);
       } catch (error) {
         console.error("Failed to fetch data from Binance API", error);
       }
     };
 
     fetchData();
-  }, [timeframe]); 
+  }, [timeframe]);
 
   useLayoutEffect(() => {
     let chart = null;
@@ -41,7 +66,7 @@ const Trading = () => {
         width: 900,
         height: 200,
         layout: {
-          backgroundColor: "rgba(0, 0, 0, 0.9)", // 90% opaque black
+          backgroundColor: "#000000", // 90% opaque black
           textColor: "#FFFFFF",
         },
         grid: {
@@ -107,6 +132,7 @@ const Trading = () => {
 
   return (
     <div className="trading">
+      {/* col1 */}
       <div className="first">
         <div className="time-intervals">
           <p>Time</p>
@@ -164,15 +190,74 @@ const Trading = () => {
         </div>
       </div>
 
+      {/* col2 */}
       <div className="second">
-        <p>
-          This is the second div. It takes up 20% of the parent div's width.
-        </p>
+        <div className="navigation">
+          <option id="orderBookButton">Order Book</option>
+          <option id="recentTradesButton">Recent Trades</option>
+        </div>
+        <div className="hamburger-container">
+          <div className="hamburgers">
+            <i class="bi bi-list"></i>
+            <i class="bi bi-list"></i>
+            <i class="bi bi-list"></i>
+          </div>
+          <div className="dropdown">
+            <span>10</span>
+            <i class="bi bi-caret-down"></i>
+          </div>
+        </div>
+        <div className="order-book">
+          <table>
+            <thead>
+              <tr>
+                <th>Price (USDT)</th>
+                <th>Amounts (BTC)</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {orders.map((order, index) => (
+                <tr key={index}>
+                  <td>{order.price}</td>
+                  <td>{order.amount}</td>
+                  <td>{order.total}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="price-change">
+            {priceChangeData.map((item, index) => (
+              <React.Fragment key={index}>
+                <span className="green-text">{item.price1}</span>
+                <i class="bi bi-arrow-up"></i>
+                <span>{item.price2}</span>
+              </React.Fragment>
+            ))}
+          </div>
+
+          <div className="data-table">
+            <table>
+              <tbody>
+                {dataTableData.map((item, index) => (
+                  <tr key={index}>
+                    <td className="green-text">{item.price1}</td>
+                    <td>{item.price2}</td>
+                    <td>{item.total}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
+
+      {/* col3 */}
       <div className="third">
-        <p>
-          This is the third div. It also takes up 20% of the parent div's width.
-        </p>
+        <div className="navigation">
+          <option id="orderBookButton">Buy</option>
+          <option id="recentTradesButton">Sell</option>
+        </div>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@
   border-radius: 16px;
   justify-content: space-between;
   gap: 4px;
+  height: 100;
 }
 
 .trading div {
@@ -91,21 +92,201 @@
   margin-bottom: 60px;
 }
 
-.trading .second {
-  width: 20%;
-  height: 561px;
-  background-color: #20252b;
-  border-radius: 8px;
-}
 
-.trading .third {
-  width: 20%;
-  height: 616px;
-  background-color: #20252b;
-  border-radius: 8px;
-  margin-right: 5px;
-}
 
 #chart-container {
   align-items: center;
 }
+
+
+.second {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  background-color: #20252b; /* Dark background color */
+  color: #ffffff; /* White text color */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.trading .third {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  background-color: #20252b; /* Dark background color */
+  color: #ffffff; /* White text color */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* .navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+} */
+
+.order-book {
+  width: 340px;
+  margin-top: 4px;
+  display: flex;
+   flex-direction: column; /* Add this line */
+   align-items: center; /* Add this line */
+  border: none !important;
+}
+
+.order-book table {
+ width: 340px;
+  border-collapse: collapse;
+}
+
+.order-book th {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px; /* Adjust as needed */
+  
+  
+ 
+}
+
+.order-book td {
+  border: 1px solid #363636; /* Dark border color */
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+ border: none !important;
+}
+
+.order-book td:first-child {
+  color: #FF6838; /* Color for the data under "Price" */
+}
+
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #000; /* Black border */
+  border-radius: 10px; /* Rounded border */
+  padding: 2px;
+  margin-top: 16px;
+ width: 340px;
+ background-color: #000000;
+ 
+}
+
+
+
+option {
+  font-size: 16px; /* Adjust as needed */
+  padding: 5px 10px; /* Adjust as needed */
+  margin: 0 10px; /* Adjust as needed */
+  color: #FFFFFF; /* Black text */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s; /* Transition effect */
+  cursor: pointer;
+  width: 50%;
+}
+
+#orderBookButton {
+  align-items: start;
+  width: 50%;
+  border: 2px solid #000; /* Black border */
+  border-radius: 10px; /* Rounded border */
+  background-color: #21262C; /* White background */
+  margin-left: 0;
+}
+
+#recentTradesButton {
+  color: #777; /* Darker text */
+ 
+}
+
+.hamburger-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: none !important;
+}
+
+.hamburgers {
+  display: flex;
+  justify-content: space-between;
+  width: 100px; /* Adjust as needed */
+  border: none !important;
+}
+
+.hamburgers .bi-list {
+  font-size: 32px; /* 32x32 size */
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the dropdown to the right */
+}
+
+.dropdown span {
+  margin-right: 5px;
+}
+
+.dropdown .bi-caret-down {
+  font-size: 16px; /* Adjust as needed */
+}
+
+
+.price-change {
+  display: flex;
+  justify-content: space-around; /* Change this line */
+  align-items: center;
+  width: 237px;
+  padding: 12px, 16px, 12px, 16px;
+  margin-top: 10px;
+   border: none !important;
+   gap: 20px !important;
+}
+
+.price-change span {
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+
+.green-text {
+  color: green;
+}
+
+.bi-arrow-up {
+  margin: 0 10px; /* Adjust as needed */
+   color: green;
+}
+
+.data-table{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: none !important;
+}
+
+.data-table table {
+  border-collapse: separate; /* Use 'separate' instead of 'collapse' */
+  border-spacing: 0 10px; /* Add vertical spacing between rows */
+}
+
+
+.data-table tr:first-child td,
+.data-table tr:nth-child(2) td:not(:first-child),
+.data-table tr:nth-child(5) td:not(:first-child),
+.data-table tr:nth-child(6) td:not(:first-child) {
+  background-color: rgba(37, 194, 110, 0.15); /* Overlay color for the first row, 5th and 6th row */
+}
+
+.data-table td:first-child {
+  color: green; /* Green color for the first column */
+}
+
+
+
+
